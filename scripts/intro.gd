@@ -11,12 +11,15 @@ func _ready() -> void:
 	var number = storeNum(23)
 	print(number) # 23
 	
-	if favNum == 37:
-		print("it is 37")
-	elif favNum == 99:
-		print("not even close")
-	else:
-		print("none")
+	#if favNum == 37:
+		#print("it is 37")
+	#elif favNum == 99:
+		#print("not even close")
+	#else:
+		#print("none")
+	
+	if typeof(favNum) == TYPE_INT:
+		print("its an int!!")
 
 #func _process(delta: float) -> void:
 	#pass
