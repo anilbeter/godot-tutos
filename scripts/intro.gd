@@ -1,31 +1,8 @@
 extends Node2D
 
-
-var greetings = "Hello"
-const firstName = "Anil"
-const favNum = 37
-
-func _ready() -> void:
-	print(greetings) # Hello
-	greetingAnil() # Hello anil!!!
-	var number = storeNum(23)
-	print(number) # 23
+func _on_death_area_body_entered(body: Node2D) -> void:
+	print("body entered", body)
+	#body enteredplayer:<CharacterBody2D#31205623050>
 	
-	#if favNum == 37:
-		#print("it is 37")
-	#elif favNum == 99:
-		#print("not even close")
-	#else:
-		#print("none")
-	
-	if typeof(favNum) == TYPE_INT:
-		print("its an int!!")
-
-#func _process(delta: float) -> void:
-	#pass
-
-func greetingAnil():
-	print("Hello anil!!!")
-
-func storeNum(num : int) -> int:
-	return num
+#	resetting scene when player enter the death_area
+	get_tree().change_scene_to_file("res://scenes/intro.tscn")

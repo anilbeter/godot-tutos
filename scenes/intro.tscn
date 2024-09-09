@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://dr51bdtwf76ug"]
+[gd_scene load_steps=9 format=4 uid="uid://dr51bdtwf76ug"]
 
 [ext_resource type="Texture2D" uid="uid://bgdmhadrs5hdh" path="res://icon.svg" id="1_hc2rd"]
 [ext_resource type="Script" path="res://scripts/intro.gd" id="1_jl7kj"]
@@ -151,6 +151,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0evcg")
 sources/1 = SubResource("TileSetAtlasSource_1qdxf")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boc3x"]
+size = Vector2(5026.5, 132.5)
+
 [node name="intro - Node2D" type="Node2D"]
 script = ExtResource("1_jl7kj")
 
@@ -165,3 +168,11 @@ tile_set = SubResource("TileSet_mfx75")
 [node name="Camera2D" type="Camera2D" parent="player"]
 position = Vector2(0, 1)
 zoom = Vector2(2.18, 2.18)
+
+[node name="death_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="death_area"]
+position = Vector2(333, 314)
+shape = SubResource("RectangleShape2D_boc3x")
+
+[connection signal="body_entered" from="death_area" to="." method="_on_death_area_body_entered"]
