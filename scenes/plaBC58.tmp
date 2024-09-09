@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://ntt86ld10cn7"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_75xs4"]
+[ext_resource type="Texture2D" uid="uid://dt5mjk0opiplt" path="res://resources/assets/level_design_blocks.png" id="2_kvvlh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qxxd0"]
+radius = 7.07107
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlh0m"]
+atlas = ExtResource("2_kvvlh")
+region = Rect2(0, 0, 16, 16)
+
+[node name="player" type="CharacterBody2D" groups=["player"]]
+position = Vector2(-5, -43)
+script = ExtResource("1_75xs4")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_qxxd0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_dlh0m")
