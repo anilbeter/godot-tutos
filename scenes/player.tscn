@@ -10,7 +10,7 @@ radius = 7.07107
 atlas = ExtResource("2_kvvlh")
 region = Rect2(0, 0, 16, 16)
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
 position = Vector2(-5, -43)
 script = ExtResource("1_75xs4")
 metadata/_edit_group_ = true
