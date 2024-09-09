@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://ntt86ld10cn7"]
+[gd_scene load_steps=5 format=3 uid="uid://ntt86ld10cn7"]
 
-[ext_resource type="Texture2D" uid="uid://bgdmhadrs5hdh" path="res://icon.svg" id="1_7d7bj"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_75xs4"]
+[ext_resource type="Texture2D" uid="uid://dt5mjk0opiplt" path="res://resources/assets/level_design_blocks.png" id="2_kvvlh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5h45u"]
 size = Vector2(122, 120.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlh0m"]
+atlas = ExtResource("2_kvvlh")
+region = Rect2(0, 0, 16, 16)
 
 [node name="player" type="CharacterBody2D"]
 position = Vector2(-5, -43)
@@ -15,4 +19,4 @@ metadata/_edit_group_ = true
 shape = SubResource("RectangleShape2D_5h45u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_7d7bj")
+texture = SubResource("AtlasTexture_dlh0m")
